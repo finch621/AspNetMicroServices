@@ -1,4 +1,3 @@
-using Catalog.API.Controllers;
 using Catalog.API.Data;
 using Catalog.API.Repositories;
 
@@ -11,7 +10,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<ILogger, Logger<CatalogController>>();
 builder.Services.AddScoped<ICatalogContext, CatalogContext>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 

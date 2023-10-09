@@ -29,10 +29,10 @@ public class ProductRepository : IProductRepository
         return await _catalogContext.Products.Find(filter).FirstOrDefaultAsync();
     }
 
-    public async Task<Product> GetProductByCategory(string categoryName)
+    public async Task<List<Product>> GetProductsByCategory(string categoryName)
     {
         var filter = Builders<Product>.Filter.Eq(p => p.Category, categoryName);
-        return await _catalogContext.Products.Find(filter).FirstOrDefaultAsync();
+        return await _catalogContext.Products.Find(filter).ToListAsync();
     }
 
     public async Task CreateProduct(Product product)
