@@ -48,7 +48,7 @@ public static class ServiceProviderExtensions
         catch (NpgsqlException e)
         {
             logger.LogError(e, "An error occured while migrating psql database!");
-            if (retryForAvailability > 50)
+            if (retryForAvailability < 50)
             {
                 retryForAvailability++;
                 Thread.Sleep(2000);
