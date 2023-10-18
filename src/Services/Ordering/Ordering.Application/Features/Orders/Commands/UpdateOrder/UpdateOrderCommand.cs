@@ -1,16 +1,17 @@
-using Ordering.Domain.Common;
+using MediatR;
 
-namespace Ordering.Domain.Entities;
+namespace Ordering.Application.Features.Orders.Command.UpdateOrder;
 
-public class Order : EntityBase
+public class UpdateOrderCommand : IRequest
 {
+    public int Id { get; set; }
     public string? UserName { get; set; }
     public decimal TotalPrice { get; set; }
 
     // Billing Address
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
-    public string EmailAddress { get; set; } = "yongco.doffinyl@gmail.com";
+    public string? EmailAddress { get; set; }
     public string? AddressLine { get; set; }
     public string? Country { get; set; }
     public string? State { get; set; }
