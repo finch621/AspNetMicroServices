@@ -72,6 +72,7 @@ services:
 
   orderdb:
     container_name: orderdb
+    restart: always
     environment:
       - "ACCEPT_EULA=Y"
       - "MSSQL_SA_PASSWORD=!Temp12345temp!"
