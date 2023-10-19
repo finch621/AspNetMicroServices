@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Domain", "src\Serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Infrastracture", "src\Services\Ordering\Ordering.Infrastracture\Ordering.Infrastracture.csproj", "{9CAA36C5-2E90-434B-A46F-E4C7B0D835AA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".", ".", "{65D2A445-50AB-4401-A9E7-3C4CAA7C164F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Messages", "src\BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj", "{5A19C6A5-74DE-4AF0-8D60-CFDAD2EAFA30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +74,10 @@ Global
 		{9CAA36C5-2E90-434B-A46F-E4C7B0D835AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CAA36C5-2E90-434B-A46F-E4C7B0D835AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CAA36C5-2E90-434B-A46F-E4C7B0D835AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A19C6A5-74DE-4AF0-8D60-CFDAD2EAFA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A19C6A5-74DE-4AF0-8D60-CFDAD2EAFA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A19C6A5-74DE-4AF0-8D60-CFDAD2EAFA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A19C6A5-74DE-4AF0-8D60-CFDAD2EAFA30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0B010695-A191-4BF5-922D-399631566E7C} = {AF32709D-9775-4EA4-9F75-1C399827A4F1}
@@ -84,5 +92,6 @@ Global
 		{67769D2E-8925-429A-A1CF-ABEFCFBE3EBE} = {61247D5D-64CA-4CE0-A898-E4E8C25DC9D7}
 		{0A1EA4A5-98A8-4346-971D-3AC73CB1A0A4} = {61247D5D-64CA-4CE0-A898-E4E8C25DC9D7}
 		{9CAA36C5-2E90-434B-A46F-E4C7B0D835AA} = {61247D5D-64CA-4CE0-A898-E4E8C25DC9D7}
+		{5A19C6A5-74DE-4AF0-8D60-CFDAD2EAFA30} = {65D2A445-50AB-4401-A9E7-3C4CAA7C164F}
 	EndGlobalSection
 EndGlobal

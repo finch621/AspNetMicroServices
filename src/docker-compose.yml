@@ -38,6 +38,9 @@ services:
       context: .
       dockerfile: Services/Ordering/Ordering.API/Dockerfile
 
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
   pgadmin:
     image: dpage/pgadmin4
 
