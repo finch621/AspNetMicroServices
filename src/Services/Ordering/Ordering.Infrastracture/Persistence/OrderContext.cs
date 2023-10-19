@@ -12,6 +12,11 @@ public class OrderContext : DbContext
 
     public DbSet<Order> Orders { get; set; }
 
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity<Order>().Property(p => p.TotalPrice).HasPrecision(18, 2);
+    }
+
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         foreach (var entry in ChangeTracker.Entries<EntityBase>())

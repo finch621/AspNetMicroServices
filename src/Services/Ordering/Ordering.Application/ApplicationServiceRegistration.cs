@@ -1,5 +1,6 @@
 using System.Reflection;
 using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Ordering.Application.Behaviours;
 
@@ -14,8 +15,8 @@ public static class ApplicationServiceRegistration
         services.AddMediatR(config =>
         {
             config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-            config.AddBehavior(typeof(UnhandledExceptionBehaviour<,>));
-            config.AddBehavior(typeof(ValidationBehaviour<,>));
+            config.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
+            config.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
         });
 
         return services;
