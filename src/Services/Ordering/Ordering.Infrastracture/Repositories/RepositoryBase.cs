@@ -63,7 +63,7 @@ public class RepositoryBase<T> : IAsyncRepository<T> where T : EntityBase
         return await query.ToListAsync();
     }
 
-    public virtual async Task<T> GetAsync(int id)
+    public virtual async Task<T?> GetAsync(int id)
     {
         return await _dbContext.Set<T>().FindAsync(id);
     }
