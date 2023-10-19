@@ -32,12 +32,11 @@ public class EmailService : IEmailService
         msg.AddTo(email.To);
         msg.AddContent(MimeType.Text, email.Body);
 
+        _logger.LogInformation($"Sending email to {email.To}");
         var response = await _client.SendEmailAsync(msg).ConfigureAwait(false);
 
         if (response.StatusCode == HttpStatusCode.Accepted || response.StatusCode == HttpStatusCode.OK)
             return true;
-
-        _logger.LogError("Something went wrong while sending mail");
 
         return false;
     }

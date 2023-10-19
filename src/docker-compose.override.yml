@@ -81,6 +81,17 @@ services:
     volumes:
       - mssql_data:/var/opt/mssql
 
+  ordering.api:
+    container_name: ordering.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:OrderConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=!Temp12345temp!;TrustServerCertificate=true"
+    depends_on:
+      - orderdb
+      - basket.api
+    ports:
+      - "8004:80"
+
   pgadmin:
     container_name: pgadmin
     restart: always
