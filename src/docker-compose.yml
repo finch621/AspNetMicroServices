@@ -30,6 +30,9 @@ services:
       context: .
       dockerfile: Services/Discount/Discount.Grpc/Dockerfile
 
+  orderdb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+
   pgadmin:
     image: dpage/pgadmin4
 
@@ -39,5 +42,6 @@ services:
 volumes:
   mongo_data:
   postgres_data:
+  mssql_data:
   portainer_data:
   pgadmin_data:

@@ -19,7 +19,6 @@ public static class InfrastractureServiceRegistration
                 options.UseSqlServer(configuration.GetConnectionString("OrderConnectionString")));
 
         services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
-
         services.AddScoped<IOrderRepository, OrderRepository>();
 
         services.Configure<EmailSettings>(c => configuration.GetSection("EmailSettings"))

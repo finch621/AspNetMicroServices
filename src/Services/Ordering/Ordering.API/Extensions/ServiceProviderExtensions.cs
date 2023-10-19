@@ -11,14 +11,18 @@ public static class ServiceProviderExtensions
     {
         var retryForAvailability = retry ?? 0;
         var logger = services.GetRequiredService<ILogger<TContext>>();
-        var context = services.GetService<TContext>();
+        var scope = services.CreateScope();
+        var context = scope.ServiceProvider.GetService<TContext>();
+
 
         try
         {
+            if (context == null)
+                throw new NullReferenceException($"{typeof(TContext).Name} is null.");
+
             logger.LogInformation($"Migrating database associated with {typeof(TContext).Name}.");
 
-            if (context != null)
-                InvokeSeeder<TContext>(seeder, context, services);
+            InvokeSeeder<TContext>(seeder, context, services);
 
             logger.LogInformation($"Migrated database associated with {typeof(TContext).Name}.");
         }

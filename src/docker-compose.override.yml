@@ -70,6 +70,16 @@ services:
     ports:
       - "8003:80"
 
+  orderdb:
+    container_name: orderdb
+    environment:
+      - "ACCEPT_EULA=Y"
+      - "MSSQL_SA_PASSWORD=!Temp12345temp!"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+
   pgadmin:
     container_name: pgadmin
     restart: always

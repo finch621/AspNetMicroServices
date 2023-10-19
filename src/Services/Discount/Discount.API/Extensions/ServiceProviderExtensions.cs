@@ -4,7 +4,7 @@ namespace Discount.API.Extensions;
 
 public static class ServiceProviderExtensions
 {
-    public static void MigrateDatabase<TContext>(this IServiceProvider service, int? retry = 0)
+    public static IServiceProvider MigrateDatabase<TContext>(this IServiceProvider service, int? retry = 0)
     {
         var retryForAvailability = retry ?? 0;
         var configuration = service.GetRequiredService<IConfiguration>();
@@ -55,5 +55,7 @@ public static class ServiceProviderExtensions
                 MigrateDatabase<TContext>(service, retryForAvailability);
             }
         }
+
+        return service;
     }
 }
