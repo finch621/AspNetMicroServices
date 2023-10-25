@@ -36,6 +36,7 @@ services:
       - catalog.api
       - discount.grpc
       - basketdb
+      - rabbitmq
     ports:
       - "8001:80"
 
@@ -90,9 +91,19 @@ services:
       - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
     depends_on:
       - orderdb
+      - rabbitmq
       - basket.api
     ports:
       - "8004:80"
+
+  ocelotapigw:
+    container_name: ocelotapigw
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - ordering.api
+    ports:
+      - "8010:80"
 
   rabbitmq:
     container_name: rabbitmq

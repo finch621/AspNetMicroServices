@@ -38,6 +38,11 @@ services:
       context: .
       dockerfile: Services/Ordering/Ordering.API/Dockerfile
 
+  ocelotapigw:
+    build:
+      context: .
+      dockerfile: ApiGateways/OcelotApiGw/Dockerfile
+
   rabbitmq:
     image: rabbitmq:3-management-alpine
 
