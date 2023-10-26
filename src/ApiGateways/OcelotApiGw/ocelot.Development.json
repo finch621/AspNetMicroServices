@@ -6,7 +6,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "catalog.api",
-          "PORT": 80
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/catalog",
@@ -19,7 +19,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "catalog.api",
-          "PORT": 80
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/catalog/{id}",
@@ -31,7 +31,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "catalog.api",
-          "PORT": 80
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/catalog/name/{name}",
@@ -43,7 +43,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "catalog.api",
-          "PORT": 80
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/catalog/category/{name}",
@@ -55,7 +55,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "basket.api",
-          "PORT": 80
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/basket/{userName}",
@@ -67,7 +67,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "basket.api",
-          "PORT": 80
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/basket",
@@ -79,7 +79,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "basket.api",
-          "PORT": 80
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/basket/checkout",
@@ -98,7 +98,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "discount.api",
-          "PORT": 80
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/discount/{productName}",
@@ -110,7 +110,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "discount.api",
-          "PORT": 80
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/discount",
@@ -121,8 +121,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "order.api",
-          "PORT": 80
+          "Host": "ordering.api",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/order/{userName}",
