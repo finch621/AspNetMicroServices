@@ -49,6 +49,12 @@ services:
       context: .
       dockerfile: ApiGateways/OcelotApiGw/Dockerfile
 
+  shopping.aggregator:
+    image: shoppingaggregator
+    build:
+      context: .
+      dockerfile: ApiGateways/Shopping.Aggregator/Dockerfile
+
   rabbitmq:
     image: rabbitmq:3-management-alpine
 
